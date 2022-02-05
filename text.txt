@@ -1,0 +1,15 @@
+1. Сделал базу данных - exam_5
+2. Tables - actions,brands,categories,counterparties,products,stores
+3. Actions - у нее есть поля id, product_id,action_date,qty, supplier_id,
+            client_id,price,store_id,to_store_id
+            supplier_id - это id поставщика ссылается к таблицы counterparties
+                        Оно не может быть null так как у товара всегда есть поставщик
+            client_id  - это id заемщика(клиента) ссылается к таблицы counterparties
+                      Оно может быть null если товар еще не отправлен к контрагенту
+            store_id - это id склада ссылается к таблицы stores
+                      Оно не может быть null ведь товар должен храниться в складе
+            to_store_id - это id склада куда была отправлен товар ссылается к таблицы stores
+                          Оно может быть null если товар еще не отправлен в другой склад
+4.Counterparties - это контрагент, у нее есть поля id, counterparty,adress,contacts
+5.Stores - это склады, у нее есть id и store
+6.Products -  это продукты, у нее есть id, product, category_id, brand_id, price
